@@ -52,7 +52,7 @@ class App extends Component {
 
   // Todo Creation Function (part 2)
   handleAddItem(id) {
-    const arrayLength = this.state.todoData.slice(-1)[0].id;
+    const arrayLength = this.state.todoData
     this.setState((prevState) => ({
       todoData: [
         ...prevState.todoData,
