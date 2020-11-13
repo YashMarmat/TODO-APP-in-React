@@ -1,0 +1,53 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body {
+  padding-top: 20px;
+}
+
+.sizing {
+  max-width: 540px;
+  align-content: center;
+}
+
+.addButton {
+  position: absolute;
+  right: -7px;
+  bottom: 46px;
+  font-size: 1.7em;
+}
+
+.updateButton {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  font-size: 1.1em;
+}
+
+.shift {
+  position: absolute;
+  padding-top: 7px;
+  right: 8px;
+  font-size: 1.5em;
+}
+
+.shift2 {
+  position: absolute;
+  right: 28px;
+  font-size: 1.7em;
+  color: purple;
+}
+
+.shift3 {
+  position: absolute;
+  right: 70px;
+  font-size: 1.7em;
+  color: lightcoral;
+}
+
+.crossed-line {
+  text-decoration: line-through;
+  color: grey;
+}
