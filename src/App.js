@@ -9,7 +9,7 @@ class App extends Component {
     super();
     this.state = {
       edit: false,
-      cloneID: "",
+      cloneID: 0,
       cloneTitle: "",
       todoData: [
         {
@@ -52,11 +52,12 @@ class App extends Component {
 
   // Todo Creation Function (part 2)
   handleAddItem(id) {
-    const arrayLength = this.state.todoData
+    const someID = Math.random();
+    //console.log(someID)
     this.setState((prevState) => ({
       todoData: [
         ...prevState.todoData,
-        { id: arrayLength + 1, task: this.state.userInput }
+        { id: someID, task: this.state.userInput }
       ],
       userInput: "" // im telling react to empty my userInput (the input box)
     }));
