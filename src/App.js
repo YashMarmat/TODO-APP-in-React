@@ -8,6 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      newID: 5, // because we already have four items in the todoData (to avoid unique key issue)
       edit: false,
       cloneID: 0,
       cloneTitle: "",
@@ -41,6 +42,14 @@ class App extends Component {
     this.handleUpdates = this.handleUpdates.bind(this);
     this.onRemove = this.onRemove.bind(this);
     this.handleStrike = this.handleStrike.bind(this);
+    this.increment = this.increment.bind(this);
+  }
+
+  // increment id
+  increment() {
+    this.setState((prevState) => ({
+      newID: prevState.newID + 1
+    }));
   }
 
   // Todo Creation Function (part 1)
@@ -51,8 +60,8 @@ class App extends Component {
   }
 
   // Todo Creation Function (part 2)
-  handleAddItem(id) {
-    const someID = Math.random();
+  handleAddItem() {
+    const someID = this.state.newID;
     //console.log(someID)
     this.setState((prevState) => ({
       todoData: [
@@ -150,6 +159,7 @@ class App extends Component {
   }
 
   render() {
+    //console.log(this.state.todoData);
     return (
       <div className="card mb-3 sizing mx-auto">
         {this.renderEdits()}
@@ -193,7 +203,10 @@ class App extends Component {
           <span
             style={{ color: "purple" }}
             className="addButton"
-            onClick={this.handleAddItem}
+            onClick={() => {
+              this.handleAddItem();
+              this.increment();
+            }}
             disabled={!this.state.userInput}
           >
             <i className="fas fa-plus-square shift ml-20"></i>
